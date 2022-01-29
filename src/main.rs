@@ -20,7 +20,7 @@ fn build_ui(app: &gtk::Application) {
     let message_input: gtk::Entry = builder.object("message_input").unwrap();
 
     // Submit button.
-    let button: gtk::Button = builder.object("generate_button").unwrap();
+    let button: gtk::Button = builder.object("generate_btn").unwrap();
     let is_dead_switch: gtk::Switch = builder.object("is_dead_switch").unwrap();
 
     // Outputs.
@@ -30,8 +30,8 @@ fn build_ui(app: &gtk::Application) {
 
     button.connect_clicked(move |_| {
         message_output.set_text(&format!(
-            "{}\n     \\\n    \\",
-            message_input.to_string().as_str()
+            "{}\n   \\\n     \\",
+            message_input.text().as_str()
         ));
 
         let is_dead = is_dead_switch.is_active();
