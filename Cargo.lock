@@ -69,9 +69,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "catsay_gui2"
+name = "catsay_gui"
 version = "0.1.0"
 dependencies = [
+ "gio",
  "gtk",
 ]
 
